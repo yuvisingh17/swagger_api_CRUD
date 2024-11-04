@@ -1,0 +1,125 @@
+openapi: 3.0.0
+info:
+  title: DUMMY DOCS
+  version: 1.0.0
+  description: API documentation using Swagger
+servers:
+  - url: http://localhost:4004
+paths:
+  /api/workouts:
+    get:
+      summary: Get all workouts
+      description: Returns a list of all workouts.
+      responses:
+        '200':
+          description: A successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mssg:
+                    type: string
+                    example: "GET all workouts"
+    post:
+      summary: Create a new workout
+      description: Adds a new workout to the list.
+      responses:
+        '200':
+          description: A successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mssg:
+                    type: string
+                    example: "POST a new workout"
+  
+  /api/workouts/{id}:
+    get:
+      summary: Get a single workout
+      description: Returns a specific workout by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the workout to fetch.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "GET a single workout"
+    delete:
+      summary: Delete a workout
+      description: Deletes a specific workout by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the workout to delete.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mssg:
+                    type: string
+                    example: "DELETE a workout"
+    patch:
+      summary: Update a workout
+      description: Updates a specific workout by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the workout to update.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mssg:
+                    type: string
+                    example: "UPDATE a workout"
+
+  /api/workouts/india/{id}:
+    get:
+      summary: Get two workouts
+      description: Returns two workouts related to India.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the workout.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "GET two workouts"
